@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';  
-
+// import { FormsModule } from "@angular/forms";
 import { AddComponent } from './add/add.component';
 import { DetailComponent } from './detail/detail.component';
 import { EditComponent } from './edit/edit.component';
@@ -29,6 +29,7 @@ import {
     imports: [
         MatProgressSpinnerModule,
         CommonModule,
+        // FormsModule,
         MatInputModule,
         MatTableModule,
         MatPaginatorModule,

@@ -23,8 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BookModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FormsModule,
   
-
     RouterModule.forRoot([
       { path: 'books', loadChildren: () => BookModule },
       { path: '', redirectTo: '/books', pathMatch: 'full' },
