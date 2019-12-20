@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-// import { Book } from './book.module';
+import { Book } from '../interface/book';
 
 @Component({
   selector: 'app-books',
@@ -10,9 +10,23 @@ import gql from 'graphql-tag';
 })
 export class BooksComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['title', 'author'];
+  data: Book[] = [];
+  resp: any = {};
+  isLoadingResults = true;
+  constructor(private apollo: Apollo) {
+  }
 
   ngOnInit() {
+    this.apollo.query({
+      query: gql`{ books { _id, title, author } }`
+    }).subscribe(res => {
+      console.log('=====',res);
+      this.resp = res;
+      this.data = this.resp.data.books;
+      console.log(this.data);
+      this.isLoadingResults = false;
+    });
   }
 
 }
