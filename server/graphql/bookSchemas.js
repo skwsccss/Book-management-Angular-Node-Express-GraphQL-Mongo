@@ -50,7 +50,7 @@ var queryType = new GraphQLObjectType({
                 type: new GraphQLList(bookType),
                 resolve: async function () {
                     const books = await BookModel.find({})
-                    if (!book) {
+                    if (!books) {
                         throw new Error('Error');
                     }
                     return books
