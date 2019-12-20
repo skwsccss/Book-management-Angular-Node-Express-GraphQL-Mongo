@@ -3,7 +3,7 @@
         <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
     <div class="button-row">
-        <a mat-flat-button color="primary" [routerLink]="['/books/add']">
+        <a mat-flat-button color="primary" [routerLink]="['/add']">
             <mat-icon>add</mat-icon>
         </a>
     </div>
@@ -24,7 +24,7 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/books/detail/', row._id]">
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/detail/', row._id]">
             </tr>
         </table>
     </div>

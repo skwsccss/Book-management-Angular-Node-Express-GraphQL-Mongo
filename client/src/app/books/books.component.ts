@@ -21,7 +21,6 @@ export class BooksComponent implements OnInit {
     this.apollo.query({
       query: gql`{ books { _id, title, author } }`
     }).subscribe(res => {
-      console.log('=====',res);
       this.resp = res;
       this.data = this.resp.data.books;
       console.log(this.data);
